@@ -17,3 +17,15 @@ Our solution is to allow technology to do the matching process. Our primary goal
 - Backend (for the website): Node.js or Flask (Python)
 - Database: Firebase, MongoDB, OracleDB, or any other MySQL or NoSQL database
 - AI model (Separate from the website): Python
+
+# Milestones
+- Finalizing on what database to use
+- Frontend:
+  - Design the webpages
+  - Integrate to the website's backend
+- Database:
+  - Create the structure of the database
+  - Connect to both the AI Model and Website applications
+- AI Model:
+  - Preprocess the data
+  - Push to the database
