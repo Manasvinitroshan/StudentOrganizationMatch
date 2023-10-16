@@ -6,16 +6,23 @@ However, an issue with the Student Organization Match Card is that the matching 
 Our solution is to allow technology to do the matching process. Our primary goal is to develop a backend or full-stack solution to whenever a UTD student plans to fill out the questions on the form and submits them, the backend will take the students' input and return a list of organizations that match their needs within minutes instead of days.
 
 # MVP
-- 3 Portions to this project: Website that users can enter their answers, database storing the organizations, and an AI model to analyze each organization's purpose
+- 3 Portions to this project:
+  - Website that users can enter their answers
+  - Database storing the organizations
+  - An AI model to analyze each organization's purpose
 - Create a database that will store the list of organizations from the Excel sheet, the categories mentioned, and additional categories.
 - Create an application that will use AI to read the mission statements of each organization and analyze what majors, academic/industry fields, or religions could apply if applicable. These will be used to create additional categories to store within the database of our choice. Only us creators have access to running this model.
 - Create a website application for UTD students to access and answer the questions similar to those on Microsoft Forms.
 - Have the website application take in students' inputs and do queries to our databases to retrieve a list of information.
 
 # Tech Stack
-- Frontend: React.js
-- Backend (for the website): Node.js or Flask (Python)
-- Database: Firebase, MongoDB, OracleDB, or any other MySQL or NoSQL database
+- Frontend: React.js (with React Bootstrap or Tailwind)
+- Backend (for the website):
+  - Node.js
+  - Flask (Python)
+- Database:
+  - A MySQL database (OracleDB or anything else) or
+  - A NoSQL database (Firebase or MongoDB)
 - AI model (Separate from the website): Python
 
 # Milestones
@@ -37,6 +44,7 @@ Our solution is to allow technology to do the matching process. Our primary goal
   - Set up a connection with OpenAI (preferrably GPT 3.5 Turbo)
   - Send the purpose statements of each organization to GPT 3.5 if the organization is academic, cultural, religious, or sport related to get specific details and add to our data.
   - Push to the database
+- Deployment of website
 
 # Stretch goals
 - Sending the results to UTD students' emails
