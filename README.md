@@ -1,9 +1,9 @@
-# StudentOrgMatch
+# StudentOrganizationMatch Website
 There are around 300+ organizations and clubs on UTD campus, which you can find [here](https://cometmail.sharepoint.com/sites/StudentOrganizationCenterSP/Lists/Student%20Organization%20Directory/All%20Items%20gallery.aspx), but a few of them can match the interests of each UTD student. It can take plenty of time just to find the organizations and/or clubs that match your interests. That's why UTD SOC added a Microsoft Forms link, named ["Student Organization Match Card"](https://forms.office.com/pages/responsepage.aspx?id=HR0ojU2c90uxbgMtFd6fbOt15QbPT51BmVL2B1nl3-xUNUo2NDhESkxFMTdHQlJJV1JGQVBYNFpLTC4u), on their [website](https://soc.utdallas.edu/). This allows students to fill out their interests and what kind of organizations they would like to join to get a list of organizations that match their interests.
 
 However, an issue with the Student Organization Match Card is that the matching between each student to certain organizations is done by some of the UTD SOC members. Since they are also students on UTD campus, they have school work to take care of. This means they will not instantly get back to the students that fill out this form; instead, as mentioned on the form, they would give the list of suitable organizations within 5 business days. This may be more efficient than exploring each organization one by one, but we feel that this process can be more efficient.
 
-Our solution is to allow technology to do the matching process. Our primary goal is to develop a backend solution to whenever a UTD student plans to fill out the questions on the form and submits them, the backend will take the students' input and return a list of organizations that match their needs within minutes instead of days.
+Our solution is to allow technology to do the matching process. Our primary goal is to develop a backend or full-stack solution to whenever a UTD student plans to fill out the questions on the form and submits them, the backend will take the students' input and return a list of organizations that match their needs within minutes instead of days.
 
 # MVP
 - 3 Portions to this project: Website that users can enter their answers, database storing the organizations, and an AI model to analyze each organization's purpose
