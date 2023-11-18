@@ -15,4 +15,5 @@ frontend/.env
 
 # Project-specific files
 .env
+node_modules/
 logs/
