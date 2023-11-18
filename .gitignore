@@ -1,0 +1,18 @@
+# Node.js/Express backend
+backend/node_modules/
+backend/.env
+backend/logs
+backend/dist/
+
+# React frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# IDE-specific files
+.vscode/
+.DS_Store
+
+# Project-specific files
+.env
+logs/
