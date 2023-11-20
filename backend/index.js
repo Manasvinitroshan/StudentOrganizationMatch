@@ -1,7 +1,10 @@
 const express = require("express");
+const cors = require("cors");
+const Clubs = require("./config");
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.all("/message", (req, res) => {
   console.log("Connected to React");
