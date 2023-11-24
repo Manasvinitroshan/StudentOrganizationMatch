@@ -9,7 +9,7 @@ const app = express();
 //app.use(json());
 //app.use(cors());
 
-app.all("/message", (req, res) => {
+app.get("/message", (req, res) => {
   console.log("Connected to React");
   res.send("Hello World!");
 });
