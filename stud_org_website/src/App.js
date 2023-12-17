@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import {React, useState} from 'react';
+import {React, useEffect, useState} from 'react';
 import {Button, TextField, Checkbox, FormControl, FormControlLabel, Select, InputLabel, MenuItem} from '@mui/material';
 
 function App() {
@@ -19,6 +19,21 @@ function App() {
       console.error('Error making GET request:', error);
     }
   };
+
+  const getData = async () => {
+    try {
+      const dataResponse = await axios.get('/');
+      console.log(dataResponse.data !== undefined ? "Received the data" : "No data received");
+      setMessage(dataResponse.data !== undefined ? dataResponse.data : "No data received");
+      // This should log "Hello World" if the server is set up correctly
+    } catch (error) {
+      console.error('Error making GET request:', error);
+    }
+  };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <div className="App">
