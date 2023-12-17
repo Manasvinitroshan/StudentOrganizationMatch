@@ -27,7 +27,8 @@ app.get("/", async (req, res) => {
   console.log("Connected to React");
   const response = await axios.get(url + "/getAllData");
   //console.log(url);
-  res.send("Name: " + response.data[2]["Title"] + "\nMission: " + response.data[2]["Mission"]);
+  //res.send("Name: " + response.data[2]["Title"] + "\nMission: " + response.data[2]["Mission"]);
+  res.send(response.data);
 });
 
 // app.post("/addClub", (req, res) => {
