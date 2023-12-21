@@ -2,7 +2,9 @@
 import './App.css';
 import axios from 'axios';
 import {React, useEffect, useState} from 'react';
-import {Button, TextField, Checkbox, FormControl, FormControlLabel, Select, InputLabel, MenuItem} from '@mui/material';
+import {Button, TextField, Checkbox, FormControl, FormControlLabel, Select, InputLabel, MenuItem,Paper} from '@mui/material';
+
+
 
 function App() {
 
@@ -38,59 +40,122 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className='form-background'>
-          <h1>Student Organization Match Card</h1>
-          What is your name?
+        <Paper className='form-background' elevation={3}>
+          <h1 className='fancyfont'>Student Organization Match Card</h1>
+          <p className='fancyfont'>What is your name?</p>
+          
+          <TextField id="outlined-basic" label="Full Name" variant="outlined" className='fancyfont'   style={{ width: '300px' }}/>
           <br/>
-          <TextField id="outlined-basic" label="Full Name" variant="outlined"/>
+            <p className='fancyfont'>What is your major?</p>
+          
+          <TextField id="outlined-basic" label="Major" variant="outlined"  style={{ width: '300px' }}/>
+
+          <p className='fancyfont'>What is your email?</p>
+          <TextField id="outlined-basic" label="Enter your email" variant="outlined"  style={{ width: '300px' }}/>
+
           <br/>
-          Your Major
-          <br/>
-          <TextField id="outlined-basic" label="Major" variant="outlined"/>
-          <br/>
-          Your Gender
-          <br/>
-          <TextField id="outlined-basic" label="Gender" variant="outlined"/>
-          <br/>
-          What types of organizations are you interested in?
-          <br/>
+          <p className='fancyfont'>Your gender</p>
           <FormControl>
-            <InputLabel id="demo-simple-select-label">Academic</InputLabel>
+          <InputLabel id="demo-simple-select-label"  style={{ width: '300px' }}>Gender</InputLabel>
+
+
+          <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={options}
+              label="Gender"
+              multiple={true}
+              style={{ width: '300px' }}
+              //onChange={handleChange}
+            >
+              {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
+              <MenuItem><FormControlLabel control={<Checkbox/>} label="Business"/></MenuItem> */}
+              <MenuItem>Male</MenuItem>
+              <MenuItem>Female</MenuItem>
+              <MenuItem>Non-Binary</MenuItem>
+              <MenuItem>Other</MenuItem>
+              <MenuItem>Prefer not to say</MenuItem>
+            </Select>
+
+          </FormControl>
+          
+          <br/>
+          <p className='fancyfont'>Your housing situation</p>
+          <FormControl>
+          <InputLabel id="demo-simple-select-label"  style={{ width: '300px' }}>Housing</InputLabel>
+
+
+<Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={options}
+    label="Housing Situation"
+    multiple={true}
+    style={{ width: '300px' }}
+    //onChange={handleChange}
+  >
+    {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
+    <MenuItem><FormControlLabel control={<Checkbox/>} label="Business"/></MenuItem> */}
+    <MenuItem>On Campus</MenuItem>
+    <MenuItem>Off Campus</MenuItem>
+  </Select>
+
+</FormControl>
+          
+          <br/>
+
+          <p className='fancyfont'>What types of organizations are you interested in?</p>
+        
+          <FormControl>
+            <InputLabel id="demo-simple-select-label"  style={{ width: '300px' }}>Organizations</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={options}
               label="Academic"
               multiple={true}
+              style={{ width: '300px' }}
               //onChange={handleChange}
             >
               {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
               <MenuItem><FormControlLabel control={<Checkbox/>} label="Business"/></MenuItem> */}
-              <MenuItem>CS</MenuItem>
-              <MenuItem>Business</MenuItem>
+              <MenuItem>Academic</MenuItem>
+              <MenuItem>Art and Music</MenuItem>
+              <MenuItem>Club Sports</MenuItem>
+              <MenuItem>Cultural</MenuItem>
+              <MenuItem>Fraternities</MenuItem>
+              <MenuItem>Honor Societies</MenuItem>
+              <MenuItem>Political</MenuItem>
+              <MenuItem>Religious</MenuItem>
+              <MenuItem>Service</MenuItem>
+              <MenuItem>Social</MenuItem>
+              <MenuItem>Sororities</MenuItem>
+              <MenuItem>Special Interest</MenuItem>
             </Select>
-            <FormControlLabel control={<Checkbox/>} label="Arts and Music"/>
-            <FormControlLabel control={<Checkbox/>} label="Club Sports"/>
-            <FormControlLabel control={<Checkbox/>} label="Cultural"/>
-            <FormControlLabel control={<Checkbox/>} label="Fraternities"/>
-            <FormControlLabel control={<Checkbox/>} label="Honor Societies"/>
-            <FormControlLabel control={<Checkbox/>} label="Political"/>
-            <FormControlLabel control={<Checkbox/>} label="Religious"/>
-            <FormControlLabel control={<Checkbox/>} label="Service"/>
-            <FormControlLabel control={<Checkbox/>} label="Social"/>
-            <FormControlLabel control={<Checkbox/>} label="Sororities"/>
-            <FormControlLabel control={<Checkbox/>} label="Special Interest"/>
+          
+
           </FormControl>
           <br/>
-          What are your hobbies or areas of interest?
+          <p className='fancyfont'>Cultural Organization: if you are interested in cultural organizations, please list any ethnicities/cultures that you may be interested in.</p>
+          <TextField id="outlined-basic" label="Enter your answer" variant="outlined"  style={{ width: '600px' }}/>
           <br/>
-          <TextField id="outlined-basic" label="Hobbies or Areas of Interest" variant="outlined"/>
           <br/>
-        </div>
-        <p>
-          {message}
-        </p>
-        <Button variant="contained" color='primary' sx={styles} onClick={getHelloWorld}>Submit</Button>
+          <p className='fancyfont'>Religious Organization: if you are interested in religious organizations, please list any specific religions that you may be interested in.</p>
+          <TextField id="outlined-basic" label="Enter your answer" variant="outlined"  style={{ width: '600px' }}/>
+          <br/>
+          <br/>
+          <p className='fancyfont' >Academic Interests: What are your areas of academic interest?</p>
+          <TextField id="outlined-basic" label="Enter your answer" variant="outlined"  style={{ width: '600px' }}/>
+          <br/>
+          <p className='fancyfont' >What are your hobbies or areas of interest?</p>
+          <TextField id="outlined-basic" label="Hobbies or Areas of Interest" variant="outlined"  style={{ width: '600px' }} multiline/>
+          <br/>
+              
+          <br/>
+          <button variant="contained" color='primary' sx={styles} onClick={getHelloWorld} className='round-button' >Submit</button>
+        </Paper>
+        
+        
         <br/>
       </header>
     </div>
