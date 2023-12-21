@@ -11,7 +11,7 @@ function App() {
 
   const getHelloWorld = async () => {
     try {
-      const response = await axios.get('/message', /* your data here */);
+      const response = await axios.get('/try', /* your data here */);
       console.log(response.data !== undefined ? response.data : "No data received");
       setMessage(response.data !== undefined ? response.data : "No data received");
       // This should log "Hello World" if the server is set up correctly

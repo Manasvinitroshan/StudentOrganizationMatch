@@ -12,7 +12,8 @@ const app = express();
 
 app.get("/message", (req, res) => {
   console.log("Connected to React");
-  res.send("Hello World!");
+  const sample = [{"message": "Hello World", "name": "John Doe" }, {"message": "Hello Again", "name": "Joe Mama" }];
+  res.send(sample[1]["message"] + ". This is " + sample[1]["name"]);
 });
 
 app.get("/firebase", async (req, res) => {
@@ -23,12 +24,22 @@ app.get("/firebase", async (req, res) => {
   console.log(url);
 });
 
-app.get("/", async (req, res) => {
+app.get("/try", async (req, res) => {
   console.log("Connected to React");
   const response = await axios.get(url + "/getAllData");
-  //console.log(url);
+  console.log(response.data);
   //res.send("Name: " + response.data[2]["Title"] + "\nMission: " + response.data[2]["Mission"]);
-  res.send(response.data);
+  //res.send(response.data);
+  res.send(response.data[1]["Title"]);
+});
+
+app.get("/users", async (req, res) => {
+  console.log("Connected to React");
+  const response = await axios.get(url + "/getUsers");
+  //console.log(url);
+  res.send("Name: " + response.data[0]["Title"] + "\nMission: " + response.data[0]["Mission"]);
+  console.log(response.data);
+  //res.send(response.data[1]["Title"]);
 });
 
 // app.post("/addClub", (req, res) => {
