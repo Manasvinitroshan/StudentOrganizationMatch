@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: orange;
+  background-color: lightsalmon;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,4 +43,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.fancyfont{
+
+  font-family: 'Quicksand', sans-serif;
+}
+
+.round-button {
+  border: none;
+  
+  padding: 15px 20px;
+  font-size: 16px;
+  background-color: salmon;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  justify-content:center;
+ 
 }
