@@ -24,7 +24,7 @@ app.get("/firebase", async (req, res) => {
   console.log(url);
 });
 
-app.get("/try", async (req, res) => {
+app.get("/clubs", async (req, res) => {
   console.log("Connected to React");
   const response = await axios.get(url + "/getAllData");
   console.log(response.data);
@@ -33,7 +33,7 @@ app.get("/try", async (req, res) => {
   res.send(response.data[1]["Title"]);
 });
 
-app.get("/users", async (req, res) => {
+app.get("/trial", async (req, res) => {
   console.log("Connected to React");
   const response = await axios.get(url + "/getUsers");
   //console.log(url);

@@ -1,17 +1,17 @@
 //import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import {React, useEffect, useState} from 'react';
+import {React, useState} from 'react';
 import {Button, TextField, Checkbox, FormControl, FormControlLabel, Select, InputLabel, MenuItem} from '@mui/material';
 
 function App() {
 
   const [message, setMessage] = useState("Try me"); // [state, setState]
-  const options = [];
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
   const getHelloWorld = async () => {
     try {
-      const response = await axios.get('/try', /* your data here */);
+      const response = await axios.get('/trial', /* your data here */);
       console.log(response.data !== undefined ? response.data : "No data received");
       setMessage(response.data !== undefined ? response.data : "No data received");
       // This should log "Hello World" if the server is set up correctly
@@ -22,13 +22,21 @@ function App() {
 
   const getData = async () => {
     try {
-      const dataResponse = await axios.get('/');
+      const dataResponse = await axios.get('/clubs');
       console.log(dataResponse.data !== undefined ? "Received the data" : "No data received");
       setMessage(dataResponse.data !== undefined ? dataResponse.data : "No data received");
       // This should log "Hello World" if the server is set up correctly
     } catch (error) {
       console.error('Error making GET request:', error);
     }
+  };
+
+  const handleChange = (event) => {
+    // Get the selected options from the event
+    const selectedOptions = Array.from(event.target.selectedOptions, (option) => option.value);
+    //const selectedOptions = event.target.value;
+    // Update the state with the selected options
+    setSelectedOptions(selectedOptions);
   };
 
   // useEffect(() => {
@@ -59,10 +67,11 @@ function App() {
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              value={options}
+              value={selectedOptions}
               label="Academic"
               multiple={true}
-              //onChange={handleChange}
+              onChange={handleChange}
+              renderValue={(selected) => selected.join(', ')}
             >
               {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
               <MenuItem><FormControlLabel control={<Checkbox/>} label="Business"/></MenuItem> */}
@@ -87,6 +96,8 @@ function App() {
           <TextField id="outlined-basic" label="Hobbies or Areas of Interest" variant="outlined"/>
           <br/>
         </div>
+        <p>Selected options: {selectedOptions.join(', ')}</p>
+        <br/>
         <p>
           {message}
         </p>
