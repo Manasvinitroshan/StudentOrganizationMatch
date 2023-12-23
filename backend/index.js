@@ -51,7 +51,7 @@ app.get("/trial", async (req, res) => {
     let categories = response.data[i]["Category"].split(",");
     if(haveCommonElement(categories, options))
     {
-      result += response.data[i]["Title"] + "\n";
+      result += response.data[i]["Title"] + ": " + response.data[i]["Mission"] + "\n\n";
     }
   }
   //res.send("Name: " + response.data[0]["Title"] + "\nMission: " + response.data[0]["Mission"]);
