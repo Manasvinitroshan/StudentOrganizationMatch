@@ -10,6 +10,10 @@ const app = express();
 //app.use(json());
 //app.use(cors());
 
+function haveCommonElement(array1, array2) {
+  return array1.some(element => array2.includes(element));
+}
+
 app.get("/message", (req, res) => {
   console.log("Connected to React");
   const sample = [{"message": "Hello World", "name": "John Doe" }, {"message": "Hello Again", "name": "Joe Mama" }];
@@ -35,10 +39,24 @@ app.get("/clubs", async (req, res) => {
 
 app.get("/trial", async (req, res) => {
   console.log("Connected to React");
+  let options = req.query.options;
   const response = await axios.get(url + "/getUsers");
-  //console.log(url);
-  res.send("Name: " + response.data[0]["Title"] + "\nMission: " + response.data[0]["Mission"]);
-  console.log(response.data);
+  if(typeof req.query.options === "string") {
+    console.log("True");
+    options = req.query.options.split(",");
+  }
+  console.log(options);
+  let result = "";
+  for (let i = 0; i < response.data.length; i++) {
+    let categories = response.data[i]["Category"].split(",");
+    if(haveCommonElement(categories, options))
+    {
+      result += response.data[i]["Title"] + "\n";
+    }
+  }
+  //res.send("Name: " + response.data[0]["Title"] + "\nMission: " + response.data[0]["Mission"]);
+  res.send(result);
+  //console.log(response.data);
   //res.send(response.data[1]["Title"]);
 });
 
