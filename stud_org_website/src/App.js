@@ -6,7 +6,28 @@ import {Button, ListItemText, TextField, Checkbox, FormControl, FormControlLabel
 
 const religions = ["Christianity", "Judaism", "Islam", "Hinduism", "Buddhism"];
 const cultures = ["Korean", "Indian", "Pakistani", "African", "Greek"];
-const academic = ["Artificial Intelligence", "Biology", "Business", "Computer Science", "Economics", "Engineering", "English", "History", "Language", "Literature", "Math", "Medicine", "Psychology", "Robotics"];
+const academic = [
+  "Artificial Intelligence", 
+  "Biology", 
+  "Business",
+  "Chemistry",
+  "Computer Science", 
+  "Economics", 
+  "Engineering", 
+  "English", 
+  "Geology",
+  "Geophysics",
+  "History", 
+  "Language", 
+  "Literature", 
+  "Math", 
+  "Medicine", 
+  "Physics",
+  "Psychology", 
+  "Robotics"
+];
+
+const clubSports = ["Ultimate Frisbee"];
 
 function App() {
 
@@ -92,28 +113,28 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Paper className='form-background' elevation={3}>
-          <h1 className='fancyfont'>Student Organization Match Card</h1>
+          <h1>Student Organization Match Card</h1>
           <p className='fancyfont'>What is your name?</p>
           
-          <TextField id="outlined-basic" label="Full Name" variant="outlined" className='fancyfont' style={{ width: '300px' }}/>
+          <TextField id="outlined-basic" label="Full Name" variant="outlined" className='fancyfont' style={{ width: '250px' }}/>
           <br/>
           
           <p className='fancyfont'>What is your major?</p>
-          <TextField id="outlined-basic" label="Major" variant="outlined"  style={{ width: '300px' }}/>
+          <TextField id="outlined-basic" label="Major" variant="outlined"  style={{ width: '250px' }}/>
 
           <p className='fancyfont'>What is your email?</p>
-          <TextField id="outlined-basic" label="Enter your email" variant="outlined"  style={{ width: '300px' }}/>
+          <TextField id="outlined-basic" label="Enter your email" variant="outlined"  style={{ width: '250px' }}/>
 
           <br/>
           <p className='fancyfont'>Your gender</p>
           <FormControl>
-            <InputLabel id="demo-simple-select-label"  style={{ width: '300px' }}>Gender</InputLabel>
+            <InputLabel id="demo-simple-select-label"  style={{ width: '250px' }}>Gender</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={gender}
               label="Gender"
-              style={{ width: '300px' }}
+              style={{ width: '250px' }}
               //onChange={handleChange}
             >
               {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
@@ -130,13 +151,13 @@ function App() {
           <br/>
           <p className='fancyfont'>Your housing situation</p>
           <FormControl>
-            <InputLabel id="demo-simple-select-label"  style={{ width: '300px' }}>Housing</InputLabel>
+            <InputLabel id="demo-simple-select-label"  style={{ width: '250px' }}>Housing</InputLabel>
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={housing}
                 label="Housing Situation"
-                style={{ width: '300px' }}
+                style={{ width: '250px' }}
                 //onChange={handleChange}
               >
                 {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
@@ -156,7 +177,7 @@ function App() {
               label="Academic"
               multiple={true}
               onChange={cultureChange}
-              style={{ width: '300px' }}
+              style={{ width: '250px' }}
               renderValue={(selected) => selected.join(', ')}
             >
               {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
@@ -181,7 +202,7 @@ function App() {
               label="Academic"
               multiple={true}
               onChange={religionChange}
-              style={{ width: '300px' }}
+              style={{ width: '250px' }}
               renderValue={(selected) => selected.join(', ')}
             >
              {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
@@ -206,7 +227,31 @@ function App() {
               label="Academic"
               multiple={true}
               onChange={academicChange}
-              style={{ width: '300px' }}
+              style={{ width: '250px' }}
+              renderValue={(selected) => selected.join(', ')}
+            >
+            {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
+            <MenuItem><FormControlLabel control={<Checkbox/>} label="Business"/></MenuItem> */}
+              {academic.map((option) => (
+                <MenuItem key={option} value={option}>
+                  <Checkbox checked={selectedAcademic.indexOf(option) > -1} />
+                  <ListItemText primary={option} />
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <br/>
+          <p className='fancyfont'>Club Sports: What sports are you interested in?</p>
+          <FormControl>
+            <InputLabel id="demo-simple-select-label">Club Sports</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={selectedAcademic}
+              label="Academic"
+              multiple={true}
+              onChange={academicChange}
+              style={{ width: '250px' }}
               renderValue={(selected) => selected.join(', ')}
             >
             {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
@@ -221,28 +266,10 @@ function App() {
           </FormControl>
           <br/>
           <p className='fancyfont' >What are your hobbies or areas of interest?</p>
-          <TextField id="outlined-basic" label="Hobbies or Areas of Interest" variant="outlined"  style={{ width: '300px' }} multiline/>
+          <TextField id="outlined-basic" label="Hobbies or Areas of Interest" variant="outlined"  style={{ width: '250px' }} multiline/>
           <br/>
           <p className='fancyfont' >Choose what other kind of organizations you are interested in</p>
           <FormControl>
-            <InputLabel id="demo-simple-select-label">Cultural</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={selectedCulture}
-              label="Academic"
-              multiple={true}
-              onChange={handleChange}
-              renderValue={(selected) => selected.join(', ')}
-            >
-              {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>
-              <MenuItem><FormControlLabel control={<Checkbox/>} label="Business"/></MenuItem> */}
-              <MenuItem>Korean</MenuItem>
-              <MenuItem>Indian</MenuItem>
-              <MenuItem>Pakistani</MenuItem>
-              <MenuItem>African</MenuItem>
-              <MenuItem>Greek</MenuItem>
-            </Select>
             <FormControlLabel control={<Checkbox/>} label="Arts and Music"/>
             <FormControlLabel control={<Checkbox/>} label="Club Sports"/>
             {/* <FormControlLabel control={<Checkbox/>} label="Cultural"/> */}
@@ -260,8 +287,8 @@ function App() {
           <br/>
           <Button variant="contained" color='primary' sx={styles} onClick={getHelloWorld}>Submit</Button>
           <br/>
-          <br/>
-          <button variant="contained" color='primary' sx={styles} onClick={getHelloWorld} className='round-button'>Submit</button>
+          {/* <br/>
+          <button variant="contained" color='primary' sx={styles} onClick={getHelloWorld} className='round-button'>Submit</button> */}
         </Paper>
         
         
@@ -298,7 +325,7 @@ function App() {
   //               label="Academic"
   //               multiple={true}
   //               onChange={handleChange}
-  //               style={{ width: '300px' }}
+  //               style={{ width: '250px' }}
   //               renderValue={(selected) => selected.join(', ')}
   //             >
   //               {/* <MenuItem><FormControlLabel control={<Checkbox/>} label="Computer Science"/></MenuItem>

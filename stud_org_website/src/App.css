@@ -30,9 +30,9 @@
 
 .form-background{
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 100px;
   padding: 20px;
-  margin: 20px;
+  margin: 20px 150px 0px 150px;
   text-align: left;
 }
 
@@ -45,8 +45,15 @@
   }
 }
 
+.header{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold !important;
+  /* font-weight: 800; */
+}
+
 .fancyfont{
   font-family: 'Quicksand', sans-serif;
+  font-weight: bold !important;
 }
 
 .round-button {
