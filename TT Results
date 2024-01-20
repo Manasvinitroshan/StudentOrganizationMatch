@@ -1,0 +1,63 @@
+import './TT Results Nav.css';
+import React from 'react';
+
+function App() {
+  return (
+      {/* Intro Section */}
+      <section id="intro" className="intro-section">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <h1 className = "boldTitle">Your results are ready!</h1>
+              <h1 className = "homepage-font"><br/> What organizations are best for you? </h1>
+              <div className= "homeButton">
+              <a className="btn btn-default page-scroll" href="#resultpage">results!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+              <h1 className = "homepage-font"><br/> What organizations are best for you? </h1>
+      {/* Result Section */}
+      <section id="result" className="result-section">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <h1 className="result-font"><b>Results</b></h1>
+            </div>
+            <div className="float-parent-element">
+              <div className="float-child-element">
+                <div className="result-title red"><b>Org recomendation 1</b></div>
+              </div>
+              <div className="float-child-element">
+                <div className="treatment-description yellow">insert text about Org 1</div>
+              </div>
+            </div>
+            <hr></hr>
+            <div className="float-parent-element">
+              <div className="float-child-element">
+                <div className="treatment-title red"><b>Org recomendation 1</b></div>
+              </div>
+              <div className="float-child-element">
+                <div className="treatment-description yellow">insert text about Org 2</div>
+              </div>
+            </div>
+            <hr></hr>
+            <div className="float-parent-element">
+              <div className="float-child-element">
+                <div className="treatment-title red"><b>Org recomendation 3</b></div>
+              </div>
+              <div className="float-child-element">
+                <div className="treatment-description yellow">insert text about Org 3</div>
+              </div>
+            </div>
+            <hr></hr>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default TT Results;
