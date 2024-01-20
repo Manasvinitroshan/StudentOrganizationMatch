@@ -1,0 +1,132 @@
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap'); /*disclaimer font*/
+/* font-family: 'Jost', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap'); /*nav bar font*/
+/* font-family: 'Red Rose', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Voces&display=swap'); /*homepage header font*/
+/* font-family: 'Voces', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap');
+/*font-family: 'Schibsted Grotesk', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&family=Source+Sans+Pro:wght@300;400&family=Varela+Round&display=swap');
+
+html, body {
+  width: 100%;
+  height: 100vh;
+}
+
+.boldTitle {
+  text-shadow: 3px 5px 2px#CD0005;
+
+  color: black;
+
+  text-align: left;
+  margin-left: 100px;
+  font-weight: 800;
+  margin-top: 150px;
+  font-size: 86px;
+}
+.homepage-font  {
+ /*font-family: 'Voces', cursive;*/
+ /*font-family: 'Schibsted Grotesk', sans-serif;*/
+ font-family: 'Jost', sans-serif;
+
+  font-size: 30px;
+  margin-top: -20px;
+  line-height: 140%;
+  text-shadow: 3px 4px 4px #C80005;
+  z-index: 20;
+}
+
+.result-font {
+  font-family: 'Red Rose', cursive;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 50px;
+  font-size: 48px;
+}
+
+.intro-section {
+  height: 100vh;
+  padding-top: 150px;
+  text-align: center;
+  background: #fff;
+  background-image:url("./Images/ttBackgroundPic.png");
+  background-size: cover;
+}
+
+.homeButton a{
+  font-size: 25px;
+  border-radius: 50px;
+  background-color: #C80005;
+  font-weight: bold;
+  font-family: 'Red Rose', cursive;
+  color: white;
+  padding: 15px;
+  padding-right: 60px;
+  padding-left: 60px;
+  border-color: #C80005;
+  box-shadow: 0px 20px 130px rgba(0, 0, 0, 0.1);
+  margin-top: 30px; 
+
+}
+
+.homeButton :hover{
+background-color: #A00004;
+color: rgb(255, 255, 255);
+box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.12);
+
+}
+
+/* Result Page */
+
+.float-parent-element { 
+  width: 40%; 
+  margin-bottom: 20%;
+} 
+.float-child-element { 
+  float: left; 
+  width: 50%; 
+  margin-bottom: 20%;
+} 
+
+hr{
+  background-color: #CD0005;
+  height: 2px;
+  width: 100%;
+}
+
+.result-title {
+  font-size: 32px;
+  color: #CD0005;
+  font-family: 'Red Rose', cursive;
+  text-align: left;
+}
+
+.result-description{
+  font-family: 'Red Rose', cursive;
+  text-align: left;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.result-section {
+  height: 100vh;
+  padding-top: 100px;
+  text-align: center;
+  background: #eee;
+}
+
+.red { /*red and yellow will be removed after page content added*/
+  background-color: none; 
+  margin-left: 0%; 
+  width: 100%;
+  height: 100px; 
+} 
+.yellow { 
+  margin-left: 50%; 
+  height: 100px; 
+  width: 40vw;
+  background-color: none; 
+}
+
