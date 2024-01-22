@@ -48,7 +48,7 @@ exports.getAllData = functions.https.onRequest(async (request, response) => {
   }
 });
 
-exports.getUsers = functions.https.onRequest(async (request, response) => {
+exports.getClubs = functions.https.onRequest(async (request, response) => {
   try {
     const collectionRef = db.collection("club-trial");
 
