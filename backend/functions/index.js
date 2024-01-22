@@ -47,3 +47,21 @@ exports.getAllData = functions.https.onRequest(async (request, response) => {
     response.status(500).send("Internal Server Error");
   }
 });
+
+exports.getClubs = functions.https.onRequest(async (request, response) => {
+  try {
+    const collectionRef = db.collection("club-trial");
+
+    const snapshot = await collectionRef.get();
+    const data = [];
+
+    snapshot.forEach((doc) => {
+      data.push(doc.data());
+    });
+
+    response.status(200).json(data);
+  } catch (error) {
+    console.error("Error getting data from Firestore:", error);
+    response.status(500).send("Internal Server Error");
+  }
+});
